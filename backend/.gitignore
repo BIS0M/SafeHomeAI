@@ -1,0 +1,19 @@
+# 가상환경
+fast-api/
+**/fast-api/
+
+# 파이썬 컴파일 파일
+**/__pycache__/
+*.py[cod]
+
+# 설정 및 보안 (위치에 상관없이 무시)
+**/.vscode/
+
+# 기타
+.DS_Store
+
+# .pt 파일 제외 
+*.pt
+
+# .env 파일 제외
+.env

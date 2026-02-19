@@ -1,0 +1,5 @@
+# .dockerignore
+app/models/rtdetr-x.pt
+**/__pycache__
+.env
+key.json
