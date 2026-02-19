@@ -1,9 +1,0 @@
-# --- 핵심 엔진 및 라이브러리 ---
-numpy<2.0.0
-ultralytics
-torch
-torchvision
-torchaudio
-
-# --- 인프라 및 환경 설정 ---
-google-cloud-storage

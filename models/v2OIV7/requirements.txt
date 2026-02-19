@@ -1,7 +1,0 @@
-ultralytics
-google-cloud-storage
-pandas
-numpy<2.0.0
-tqdm
-pyyaml
-opencv-python-headless

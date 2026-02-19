@@ -1,8 +1,0 @@
-# SafeHome Local Test Dataset
-train: ../../datasets/test/images 
-val: ../../datasets/test/images   
-test: ../../datasets/test/images  
-
-# 사용 모델에 따라 클래스 수정할 것
-nc: 4 
-names: ['bed', 'desk', 'cabinet', 'chair']
