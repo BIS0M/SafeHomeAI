@@ -1,6 +1,12 @@
-# 🛡️ SafeHomeAI
+<p align="center">
+  <img src="docs/banner.png" alt="SafeHomeAI — team. 애지중지 | 2026 Google Cloud BootCamp" width="100%" />
+</p>
 
 > **AI 기반 아동 안전 진단 서비스** — 집안 사진 한 장으로 우리 아이에게 위험한 요소를 찾아내고, 발달 단계에 맞춘 안전 가이드와 해결책을 제안합니다.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/🏆_2026_전국_Google_Cloud_AI_융합_경진대회-우수상-FFD700" />
+</p>
 
 <p align="left">
   <img src="https://img.shields.io/badge/AI-YOLO26--Large-blue" />
@@ -8,6 +14,17 @@
   <img src="https://img.shields.io/badge/Backend-FastAPI-009688" />
   <img src="https://img.shields.io/badge/Frontend-Flutter-02569B" />
   <img src="https://img.shields.io/badge/Cloud-GCP%20(Cloud%20Run%20%7C%20Firestore%20%7C%20GCS)-4285F4" />
+</p>
+
+---
+
+## 🏆 수상
+
+**2026 전국 Google Cloud 기반 AI 융합 경진대회 — 우수상** (Google Cloud 인공지능 개발자 과정)
+강원대학교 **애지중지** 팀 (김기현 · 김시현 · 송진호 · 현여정 · 정승일)
+
+<p align="center">
+  <img src="presentation/수상사진.png" alt="2026 전국 Google Cloud 기반 AI 융합 경진대회 우수상" width="70%" />
 </p>
 
 ---
@@ -24,7 +41,7 @@
 
 진단 결과는 기록으로 저장되고, 다른 보호자들과 공유·소통할 수 있는 **커뮤니티** 기능까지 갖춘 풀스택 서비스입니다.
 
-> 강원대학교 2025 Google Cloud BootCamp 프로젝트로 진행되었습니다.
+> 강원대학교 **애지중지** 팀 / 2026 Google Cloud BootCamp 프로젝트로 진행되었습니다.
 
 ---
 
@@ -53,38 +70,15 @@
 
 ## 🏗️ 시스템 아키텍처
 
-```mermaid
-flowchart LR
-    subgraph Client["📱 Flutter App (Web/Mobile)"]
-        UI[촬영 · 진단 결과 · 커뮤니티]
-    end
-
-    subgraph Backend["⚙️ FastAPI on Cloud Run"]
-        API[REST API]
-        AI[AI Service]
-        COM[Commerce Service]
-    end
-
-    subgraph AILayer["🧠 AI Pipeline"]
-        YOLO[YOLO26-Large<br/>객체 탐지]
-        RAG[Gemini + RAG<br/>위험도 판정 · 조언]
-    end
-
-    subgraph GCP["☁️ Google Cloud"]
-        GCS[(Cloud Storage<br/>이미지)]
-        FS[(Firestore<br/>리포트 · 커뮤니티)]
-    end
-
-    UI -->|사진 업로드| API
-    API --> AI
-    AI --> YOLO --> RAG
-    AI --> GCS
-    API --> FS
-    COM -->|상품 검색| NAVER[네이버 쇼핑 API]
-    API --> UI
-```
+<p align="center">
+  <img src="presentation/아키텍쳐.png" alt="SafeHomeAI 시스템 아키텍처" width="100%" />
+</p>
 
 요청 흐름: **사진 업로드 → YOLO 객체 탐지 → 위험 매핑(risk_map) → Gemini RAG 조언 생성 → GCS 이미지 저장 + Firestore 리포트 저장 → 결과 반환**
+
+- **Frontend**: Flutter(Dart) · Firebase Hosting
+- **Backend**: FastAPI(Python) · Docker · GCP Cloud Load Balancing · Firestore · Cloud Storage
+- **Model & LLM**: YOLO(객체 탐지) + Gemini(RAG 가이드라인) · 네이버 Open API 연동
 
 ---
 
