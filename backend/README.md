@@ -24,10 +24,10 @@ gcloud run deploy safehome-backend \
     --cpu-boost \
     --concurrency=50 \
     --timeout=300 \
-    --set-env-vars="GEMINI_API_KEY=AIzaSyCaUdE9-luXP7lz1JTdhaIQaADzEBxofeo,\
-NAVER_CLIENT_ID=AKN_uYZWiDP4agnwLOuw,\
-NAVER_CLIENT_SECRET=mjem6Fj4Ih,\
-JWT_SECRET_KEY=change-me-super-secret,\
+    --set-env-vars="GEMINI_API_KEY=YOUR_GEMINI_API_KEY,\
+NAVER_CLIENT_ID=YOUR_NAVER_CLIENT_ID,\
+NAVER_CLIENT_SECRET=YOUR_NAVER_CLIENT_SECRET,\
+JWT_SECRET_KEY=YOUR_JWT_SECRET_KEY,\
 JWT_ALGORITHM=HS256,\
 JWT_EXPIRE_MINUTES=60" \
     --allow-unauthenticated
